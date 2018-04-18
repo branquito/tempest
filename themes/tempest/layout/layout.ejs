@@ -5,8 +5,12 @@
   <%- partial('_partial/navigation') %>
   <div class="section">
     <div class="container">
-      <%- partial('_partial/header') %>
-      <%- body %>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <%- partial('_partial/header') %>
+          <%- body %>
+        </div>
+      </div>
     </div>
   </div>
   <%- partial('_partial/after-footer') %>

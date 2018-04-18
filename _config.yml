@@ -4,7 +4,7 @@
 
 # Site
 title: Tempest
-subtitle: Will blow your mind away!
+subtitle:
 description:
 keywords:
 author: branchito de munze
@@ -18,7 +18,7 @@ menu:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:day/:slug/
 permalink_defaults:
 
 # Directory

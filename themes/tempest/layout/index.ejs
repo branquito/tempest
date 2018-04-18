@@ -1,9 +1,13 @@
-
-
 <% site.posts.forEach(function(post) { %>
-  <p>
-    <a href="<%- post.path %>">
-      <%- post.title %>
-    </a>
-  </p>
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+        <a href="<%- post.path %>">
+          <%- post.title %>
+        </a>
+      </div>
+    </div>
+  </div>
 <% }) %>
+
+
