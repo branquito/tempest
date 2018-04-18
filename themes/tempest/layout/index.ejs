@@ -1,7 +1,9 @@
 
 
 <% site.posts.forEach(function(post) { %>
-  <a href="<%- post.path %>">
-    <%- post.title %>
-  </a>
+  <p>
+    <a href="<%- post.path %>">
+      <%- post.title %>
+    </a>
+  </p>
 <% }) %>
