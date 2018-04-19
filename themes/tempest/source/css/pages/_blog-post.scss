@@ -1,0 +1,288 @@
+.post-nav{
+    position: fixed;
+    top:0;
+    right: 0;
+    height: 100vh;
+    width: 370px;
+    box-shadow: 0 1px 15px 0 rgba(0,0,0,0.15), 0 2px 7px 0 rgba(0,0,0,0.1);
+    padding: 50px 46px;
+    z-index: 99999;
+    background: url("../images/post-nav-background.jpg") 0 0 no-repeat;
+    background-size: cover;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint($xmedium){
+        padding: 50px 40px;
+        width: 324px;
+    }
+    @include breakpoint($medium){
+        transform: translateX(324px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    &__close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 25px 25px 20px 20px;
+        z-index: 9999;
+        cursor: pointer;
+        display: none;
+        @include breakpoint($medium){
+            display: block;
+        }
+        &:hover{
+            .icon{
+                transform: rotate(180deg);
+            }
+        }
+        .icon{
+            width: 21px;
+            height: 21px;
+            fill:$white;
+            transition: $t-hover;
+        }
+    }
+
+    &__logo{
+        margin: 0 auto 36px;
+        display: table;
+        svg{
+            width: 68px;
+            height: 54px;
+            fill: $white;
+        }
+        @include breakpoint($xmedium){
+            margin-bottom: 52px;
+        }
+        @include breakpoint($medium) {
+
+        }
+    }
+    &__links-wrapp{
+        margin-bottom: 55px;
+        &:last-of-type{
+            flex: 1;
+            @include breakpoint($xsmall){
+                margin-bottom: 46px;
+            }
+        }
+        h3{
+            color: $white;
+            font-family: $font-main-bold;
+            font-size: em(22);
+            line-height: line-height(22, 30);
+            margin-bottom: 28px;
+            @include breakpoint($xmedium){
+                margin-bottom: 24px;
+            }
+        }
+    }
+    &__links-inner{
+        position: relative;
+    }
+    &__links{
+        padding-left: 15px;
+        position: relative;
+        &:after{
+            left: 0;
+            border-left: 1px solid $white;
+            content: '';
+            top:5px;
+            bottom: 4px;
+            display: block;
+            position: absolute;
+        }
+    }
+    &__links-item{
+        margin-bottom: 13px;
+        a{
+            color: $white-65;
+            transition: $t-hover;
+            font-size: em(17);
+            line-height: line-height(17, 23);
+            position: relative;
+            display: block;
+            @include breakpoint($xmedium){
+                font-size: em(16);
+                line-height: line-height(16, 22);
+            }
+        }
+        &:hover, &.is-active{
+            a{
+                color: $white;
+                &:after{
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    &__links-circle{
+        opacity: 0;
+        visibility: hidden;
+        width: 7px;
+        height: 7px;
+        background-color: $white;
+        border-radius: 50%;
+        position: absolute;
+        left: -3px;
+        top:0;
+    }
+
+    &__share{
+        width: 60px;
+        height: 60px;
+        flex: 0 0 60px;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,0.11);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $white;
+        position: relative;
+        //left: 48px;
+        //bottom: 48px;
+        transition: $t-hover;
+
+        @include breakpoint($xmedium){
+            width: 50px;
+            height: 50px;
+            flex: 0 0 50px;
+            position: relative;
+            left: auto;
+            bottom: auto;
+            margin-left: -1px;
+        }
+        .icon{
+            width: 21px;
+            height: 21px;
+            color: $sub-color;
+            transition: $t-hover;
+            @include breakpoint($xmedium){
+                height: 17px;
+                width: 17px;
+            }
+        }
+        &:hover{
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.25);
+            .icon{
+                opacity: 0.9;
+            }
+        }
+    }
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    background: rgba(0,37,58, .13);
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    display: none;
+    @include breakpoint($medium){
+        display: block;
+    }
+}
+
+.blog-post{
+    padding-right: 370px;
+    position: relative;
+    @include breakpoint($xmedium){
+        padding-right: 324px;
+    }
+    @include breakpoint($medium){
+        padding-right: 0;
+    }
+    &__nav-trigger{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 25px 25px 20px 20px;
+        z-index: 9999;
+        cursor: pointer;
+        display: none;
+        @include breakpoint($medium){
+            display: block;
+        }
+        .icon{
+            width: 21px;
+            height: 17px;
+            fill:$white;
+            transition: $t-hover;
+        }
+        &:hover{
+            .icon{
+                opacity: 0.85;
+            }
+        }
+    }
+    &__cover{
+        padding-bottom: 23.04%;
+        position: relative;
+        overflow: hidden;
+        @include breakpoint($small){
+            height: 120px;
+            padding-bottom: 0;
+        }
+        img {
+            bottom: -9999px;
+            height: 100%;
+            left: -9999px;
+            margin: auto;
+            max-width: initial;
+            min-width: 100%;
+            position: absolute;
+            right: -9999px;
+            top: -9999px;
+            width: auto;
+        }
+    }
+    &__inner{
+        max-width: 690px;
+        margin: 0 auto;
+        padding: 46px 15px 36px;
+        @include breakpoint($xmedium){
+            padding: 46px 30px;
+        }
+        h1{
+            margin-bottom: 7px;
+        }
+        h2{
+            margin: 60px 0 20px;
+            @include breakpoint($xmedium){
+                margin-top: 40px;
+            }
+        }
+        h1, h2{
+            color: #757575;
+            font-family: $font-main-extrabold;
+            font-size: em(35);
+            line-height: line-height(35, 47);
+            @include breakpoint($xmedium){
+                font-size: em(26);
+                line-height: line-height(26, 35);
+            }
+        }
+        p{
+            color: #969696;
+        }
+    }
+    &__quick-info{
+        color: $main-color;
+        padding-bottom: 33px;
+        display: block;
+        font-size: em(16);
+        line-height: line-height(16,25);
+        font-family: $font-main-light-italic;
+        @include breakpoint($xmedium){
+            font-size: em(14);
+            line-height: line-height(14, 25);
+        }
+    }
+}

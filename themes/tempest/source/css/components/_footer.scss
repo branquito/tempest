@@ -1,0 +1,115 @@
+.footer{
+  background: linear-gradient(237.06deg, #B5D7EE 0%, #8BBCD7 100%);
+  padding: 40px 0 36px;
+  position: relative;
+  overflow: hidden;
+  @include breakpoint($xsmall){
+    padding: 35px 0 37px;
+  }
+  &__logo{
+    float: left;
+    display: block;
+    @include breakpoint($xsmall){
+      float: none;
+      margin: 0 auto;
+      display: table;
+    }
+    .icon{
+      width: 68px;
+      height: 54px;
+      fill:$white;
+      @include breakpoint($xsmall){
+        width: 44px;
+        height: 35px;
+      }
+    }
+  }
+  &__links{
+    float: right;
+    margin-top: 10px;
+    @include breakpoint($xsmall){
+      float: left;
+      width: 100%;
+      text-align: center;
+      margin-top: 37px;
+    }
+    li{
+      display: block;
+      float: left;
+      margin-left: 58px;
+      color: $sub-color;
+      @include breakpoint($xsmall){
+        float: none;
+        margin: 0 0 20px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+      a{
+        color: $white;
+        transition: $t-hover;
+        font-family: $font-main-bold;
+        font-size: em(23);
+        @include breakpoint($medium){
+          font-size: em(19);
+        }
+        @include breakpoint($small){
+          font-size: em(17);
+        }
+        &:hover{
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+  &__restangle{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26.1vw;
+    height: 96px;
+    max-height: 102px;
+    border-radius: 9px;
+    @include breakpoint($medium){
+      max-height: 80px;
+    }
+    @include breakpoint($small){
+      width: 240px;
+      height: 75px;
+    }
+    &--1{
+      left: -8.5%;
+      top: -22%;
+      background-color: $white;
+      opacity: .14;
+      @include breakpoint($small){
+        top: 53%;
+        left: -43%;
+      }
+    }
+    &--2{
+      left: 43.8%;
+      top: 61%;
+      background-color: $white;
+      opacity: .14;
+      @include breakpoint($small){
+        top: -7%;
+        left: auto;
+        right: -50%;
+      }
+    }
+    &--3{
+      left: auto;
+      top: -44%;
+      right: -16%;
+      background-color: $white;
+      opacity: .23;
+      @include breakpoint($small){
+        display: none;
+      }
+    }
+  }
+}

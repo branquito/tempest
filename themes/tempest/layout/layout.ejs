@@ -2,17 +2,8 @@
 <html lang="en">
 <%- partial('_partial/head') %>
 <body>
-  <%- partial('_partial/navigation') %>
-  <div class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-8 is-offset-2">
-          <%- partial('_partial/header') %>
-          <%- body %>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%- partial('_partial/header') %>
+  <%- body %>
   <%- partial('_partial/after-footer') %>
   <%- partial('_partial/netlify-identity') %>
 </body>

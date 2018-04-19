@@ -1,0 +1,929 @@
+.home{
+    position: relative;
+    height: 865px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.11);
+    margin-bottom: 80px;
+    background: linear-gradient(71.94deg, rgba(86,157,194,0.73) 0%, rgba(163,208,242,0.64) 100%);
+    @include breakpoint($large){
+        height: 725px;
+    }
+    @include breakpoint($xmedium){
+        height: 685px;
+    }
+    @include breakpoint($xsmall){
+        height: auto;
+        margin-bottom: 55px;
+    }
+    &__wrapper{
+        position: absolute;
+        top:0;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        max-width: 1260px;
+        display: flex;
+        transform: translateX(-50%);
+        padding:126px 15px 0 15px;
+        z-index:1;
+        @include breakpoint($xlarge){
+            max-width: inherit;
+            padding:126px 6.6% 0 6.6%;
+        }
+        @include breakpoint($medium){
+            max-width: inherit;
+            padding:126px 35px 0 35px;
+        }
+        @include breakpoint($xsmall){
+            padding-top: 160px;
+            position: relative;
+            display: block;
+        }
+    }
+    &__info{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 0 10px 72px 0;
+        @include breakpoint($medium){
+            width: 45%;
+        }
+        @include breakpoint($xsmall){
+            width: 100%;
+            padding-bottom: 85px;
+        }
+        h1{
+            color: $white;
+            font-family: $font-main-extrabold;
+            font-size: em(41);
+            line-height: line-height(41, 55);
+            margin-bottom: 24px;
+            @include breakpoint($large){
+                font-size: em(26);
+                line-height: line-height(26, 35);
+                margin-bottom: 16px;
+            }
+        }
+        p{
+            color: $white;
+            font-family: $font-main-semibold;
+            margin-bottom: 45px;
+            max-width: 445px;
+            @include breakpoint($large){
+                font-size: em(16);
+                line-height: line-height(16, 25);
+                margin-bottom: 32px;
+            }
+            @include breakpoint($xsmall){
+                max-width: inherit;
+            }
+        }
+    }
+    &__email-form{
+        width: 100%;
+        max-width: 448px;
+        position: relative;
+        margin-bottom: 156px;
+        @include breakpoint($large){
+            max-width: 287px;
+            margin-bottom: 45px;
+        }
+        input[type=text]{
+            height: 70px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px 0 rgba(0,0,0,0.09);
+            border: 0;
+            width: 100%;
+            padding: 0 95px 0 35px;
+            font-size: em(26);
+            color: $sub-color;
+            transition: $t-hover;
+            @include placeholder(){
+                color: #c1c1c1;
+                opacity: 1;
+                //font-style: italic;
+                font-family: $font-main-light-italic;
+            }
+            @include breakpoint($large){
+                height: 45px;
+                font-size: em(16);
+                padding: 0 95px 0 22px;
+                border-radius: 5px;
+            }
+            &:focus{
+                box-shadow: 0 2px 10px 0 rgba(0,0,0,0.25);
+            }
+        }
+    }
+    &__email-form-trigger{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 90px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include breakpoint($large){
+            width: 60px;
+        }
+        .icon{
+            width: 29px;
+            height: 25px;
+            fill: #959595;
+            transition: $t-hover;
+            @include breakpoint($large){
+                width: 19px;
+                height: 16px;
+            }
+        }
+        &:hover{
+            .icon{
+                fill:$main-color;
+            }
+        }
+    }
+    &__carousel{
+        width: 50%;
+        @include breakpoint($medium){
+            width: 55%;
+        }
+        @include breakpoint($xsmall){
+            display: none;
+        }
+    }
+
+    &__carousel-inner{
+        height: 100%;
+        .slick-list, .slick-track, .slick-slide, .slick-slide > div{
+            height: 100%;
+        }
+    }
+
+    &__carousel-item {
+        text-align: center;
+        height: 100%;
+        position: relative;
+        &--1{
+            img{
+                margin-top: 15px;
+                max-width: 504px;
+            }
+        }
+        &--2{
+            img{
+                margin-top: -20px;
+                max-width: 396px;
+
+            }
+        }
+        &--3{
+            img{
+                margin-top: -18px;
+                max-width: 360px;
+
+                @include breakpoint($large){
+                    max-width: 70% !important;
+                }
+
+            }
+        }
+        &--4{
+            img{
+                margin-top: -8px;
+                max-width: 376px;
+            }
+        }
+        img{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            @include breakpoint($large){
+                max-width: 80%;
+            }
+        }
+    }
+
+    &__scroll-down{
+        height: 75px;
+        width: 75px;
+        background-color: $white;
+        box-shadow: 0 2px 9px 0 rgba(0,0,0,0.09);
+        position: absolute;
+        left: 50%;
+        bottom: -32px;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 99;
+        @include breakpoint($large){
+            height: 47px;
+            width: 47px;
+            bottom: -23px;
+        }
+        &:hover{
+            .icon{
+                animation: arrow-animation 1s linear infinite;
+                fill:$main-color;
+            }
+        }
+        .icon{
+            width: 30px;
+            height: 20px;
+            fill:$sub-color;
+            margin-top: 6px;
+            transition: $t-hover;
+            @include breakpoint($large){
+                width: 20px;
+                height: 15px;
+            }
+        }
+    }
+    &__restangle-wrapp{
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+    }
+    &__restangle{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 21.1vw;
+        height: 17.3vh;
+        max-height: 102px;
+        border-radius: 9px;
+        @include breakpoint($medium){
+            max-height: 80px;
+        }
+        @include breakpoint($small){
+            width: 240px;
+            height: 75px;
+        }
+        &--1{
+            left: -1.5%;
+            top: 18%;
+            background-color: $white;
+            opacity: .1;
+            @include breakpoint($small){
+                top:23%;
+                left: -35%;
+            }
+        }
+        &--2{
+            left: 46.8%;
+            top: -2%;
+            background-color: $white;
+            opacity: .32;
+            @include breakpoint($small){
+                top:13%;
+                left: auto;
+                right: -40%;
+            }
+        }
+        &--3{
+            left: 49.2%;
+            top: 71.5%;
+            background-color: $white;
+            opacity: .13;
+            @include breakpoint($small){
+                top: 65%;
+                left: 45%;
+            }
+        }
+        &--4{
+            left: auto;
+            top: auto;
+            right: 0;
+            bottom: 0;
+            background-color: $white;
+            opacity: .14;
+            @include breakpoint($small){
+                right: auto;
+                left:-5%;
+            }
+        }
+        &--5{
+            left: 6%;
+            top: auto;
+            bottom: 20%;
+            background-color: $white;
+            opacity: .13;
+            @include breakpoint($large){
+                bottom: 10%;
+            }
+            @include breakpoint($small){
+                bottom: 40%;
+            }
+        }
+    }
+}
+
+.blog-list{
+    margin-bottom: 62px;
+    &__inner{
+        margin: 0 -5px;
+    }
+    &__item{
+        padding: 5px 5px 0 5px;
+        @include breakpoint($xsmall){
+            padding: 5px;
+        }
+    }
+    &__item-inner{
+        display: flex;
+        border-radius: 8px;
+        box-shadow: 0 2px 9px 1px rgba(0,0,0,0.05);
+        overflow: hidden;
+        margin-bottom: 34px;
+        transition: $t-hover;
+        @include breakpoint($xsmall){
+            display: block;
+            margin-bottom: 0;
+            border-radius: 3px;
+        }
+        &:hover{
+            box-shadow: 0 2px 9px 1px rgba(0,0,0,0.1);
+        }
+    }
+    &__item-image{
+        overflow: hidden;
+        position: relative;
+        flex: 0 0 476px;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.08);
+        @include breakpoint($large){
+            flex: 0 0 410px;
+        }
+        @include breakpoint($xmedium){
+            flex: 0 0 40%;
+        }
+        @include breakpoint($xsmall){
+            flex: inherit;
+            padding-bottom: 52.83%;
+        }
+        img {
+            bottom: -9999px;
+            height: 100%;
+            left: -9999px;
+            margin: auto;
+            max-width: initial;
+            min-width: 100%;
+            position: absolute;
+            right: -9999px;
+            top: -9999px;
+            width: auto;
+        }
+    }
+    &__item-text{
+        padding: 23px 46px 23px 46px;
+        @include breakpoint($xmedium){
+            padding: 23px 30px 23px 30px;
+        }
+        @include breakpoint($xsmall){
+            text-align: center;
+            padding: 23px 40px 25px 40px;
+        }
+        @include breakpoint($small){
+            text-align: center;
+            padding: 23px 20px 25px 20px;
+        }
+        h2{
+            position: relative;
+            font-size: em(23);
+            line-height: line-height(23,31);
+            font-family: $font-main-extrabold;
+            padding-bottom: 14px;
+            margin-bottom: 10px;
+            @include breakpoint($xmedium){
+                font-size: em(18);
+                line-height: line-height(18,24);
+            }
+            @include breakpoint($xsmall){
+                padding-bottom: 21px;
+                margin-bottom: 18px;
+            }
+            &:after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 47px;
+                border-bottom: 3px solid #e7e7e7;
+                @include breakpoint($xsmall){
+                    width: 49px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+
+        p{
+            @include breakpoint($xsmall){
+                font-size: em(18);
+                line-height: line-height(18,25);
+            }
+        }
+    }
+    &__item-category{
+        color: $main-color;
+        text-transform: uppercase;
+        font-size: em(11);
+        font-family: $font-main-extrabold;
+        display: block;
+        margin-bottom: 14px;
+        letter-spacing: 3px;
+    }
+    &__carousel-arrows{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        @include breakpoint($xsmall){
+            margin-top: 25px;
+        }
+        li{
+            position: relative;
+            top:auto;
+            padding: 0;
+            height: 36px;
+            width: 36px;
+            transform: translateY(0);
+            background-color: $white;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.11);
+            border-radius: 50%;
+            margin: 0 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            .icon{
+                fill: $sub-color;
+                width: 15px;
+                height: 9px;
+                transition: $t-hover;
+                &--left{
+                    transform: rotate(90deg);
+                }
+                &--right{
+                    transform: rotate(-90deg);
+                }
+            }
+            &:hover{
+                .icon{
+                    fill:$main-color;
+                }
+            }
+        }
+    }
+}
+
+.about{
+    margin-bottom: 130px;
+    @include breakpoint($large){
+        margin-bottom: 80px;
+    }
+    @include breakpoint($xsmall){
+        margin-bottom: 50px;
+    }
+    .container{
+        max-width: 1450px;
+        @include breakpoint($xlarge){
+            max-width: inherit;
+            padding: 0 0 0 6.6%;
+        }
+        @include breakpoint($medium){
+            padding: 0;
+        }
+    }
+    &__inner{
+        position: relative;
+        padding: 20px 0;
+        @include breakpoint($medium){
+            height: 545px;
+            display: flex;
+            padding: 0;
+        }
+        @include breakpoint($small){
+            height: 685px;
+            display: flex;
+            padding: 0;
+        }
+    }
+    &__background{
+        width: 97%;
+        float: right;
+        @include breakpoint($xlarge){
+            width: 88%;
+        }
+        @include breakpoint($xmedium){
+            width: 100%;
+        }
+    }
+    &__background-image{
+        background: url('../images/about-background-large.png') no-repeat 0 0;
+        background-size: cover;
+        padding-bottom: 48.49%;
+        @include breakpoint($xlarge){
+            background: url('../images/about-background.png') no-repeat 0 0;
+            background-size: cover;
+            padding-bottom: 56.49%;
+        }
+        @include breakpoint($medium){
+            padding-bottom: 0;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+        }
+    }
+
+
+    &__mobile{
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 25.675%;
+        @include breakpoint($xmedium){
+            width: 30.675%;
+        }
+        @include breakpoint($medium){
+            display: none;
+        }
+    }
+    &__mobile-image{
+        padding-bottom: 203.76%;
+    }
+    &__text{
+        position: absolute;
+        top:0;
+        left: 26%;
+        width: 31.65%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 50px;
+        @include breakpoint($xlarge){
+            width: 36.65%;
+        }
+        @include breakpoint($large){
+            width: 64.325%;
+            padding: 0 50px;
+        }
+        @include breakpoint($xmedium){
+            width: 59.325%;
+            padding: 0 30px;
+            left: 30.675%;
+        }
+        @include breakpoint($medium){
+            width: 100%;
+            padding: 0 35px;
+            left: 0;
+        }
+        h2{
+            color: $white;
+            position: relative;
+            font-size: em(41);
+            line-height: line-height(41,55);
+            font-family: $font-main-extrabold;
+            margin-bottom: 20px;
+            @include breakpoint($large){
+                font-size: em(26);
+                line-height: line-height(26,35);
+            }
+        }
+        p{
+            color: $white;
+            position: relative;
+            font-size: em(19);
+            line-height: line-height(20,25);
+            font-family: $font-main-bold;
+            @include breakpoint($large){
+                font-size: em(16);
+                line-height: line-height(16,25);
+            }
+        }
+    }
+    &__cards{
+        position: absolute;
+        right: 5%;
+        top:50%;
+        width: 33.675%;
+        transform: translateY(-50%);
+        @include breakpoint($xlarge){
+            right: 0;
+        }
+        @include breakpoint($large){
+            display: none;
+        }
+    }
+    &__cards-image{
+        padding-bottom: 89.19%;
+        background: url('../images/about-cards-big.png') no-repeat 0 0;
+        background-size: cover;
+        @include breakpoint($xlarge){
+            background: url('../images/about-cards.png') no-repeat 0 0;
+            background-size: cover;
+            padding-bottom: 108.19%;
+        }
+        &--de{
+            background: url('../images/about-cards-big-de.png') no-repeat 0 0;
+            background-size: cover;
+            @include breakpoint($xlarge){
+                background: url('../images/about-cards-de.png') no-repeat 0 0;
+                background-size: cover;
+            }
+        }
+
+    }
+}
+
+.logo-carousel{
+    margin-bottom: 145px;
+    @include breakpoint($large){
+        margin-bottom: 100px;
+    }
+    @include breakpoint($xsmall){
+        margin-bottom: 60px;
+    }
+    &__inner{
+        border-radius: 8px;
+        box-shadow: 0 2px 9px 1px rgba(0,0,0,0.05);
+        padding: 0 40px;
+        @include breakpoint($medium){
+            padding: 0 20px;
+        }
+        @include breakpoint($small){
+            padding: 0 10px;
+        }
+    }
+    &__item{
+        min-height: 146px;
+        position: relative;
+        @include breakpoint($medium){
+            min-height: 115px;
+        }
+        @include breakpoint($small){
+            min-height: 106px;
+        }
+        img{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            max-width: 85%;
+        }
+        &--bottom-space{
+            img{
+                margin-top: -4px;
+            }
+        }
+    }
+    //&__item-inner{
+    //    min-height: 146px;
+    //    display: flex;
+    //    align-items: center;
+    //    justify-content: center;
+    //    div{
+    //        padding: 0 20px;
+    //    }
+    //    &:first-child{
+    //        background-color: red;
+    //    }
+    //}
+}
+
+.contact{
+    margin-bottom: 108px;
+    @include breakpoint($xsmall){
+        margin-bottom: 78px;
+    }
+    &__form{
+        box-shadow: 0 2px 7px 1px rgba(0,0,0,0.07);
+        border-radius: 8px;
+        width: 74.391%;
+        padding: 64px 303px 64px 102px;
+
+        @include breakpoint($large){
+            padding: 44px 223px 44px 70px;
+        }
+        @include breakpoint($medium){
+            padding-right: 190px;
+        }
+        @include breakpoint($xsmall){
+            width: 100%;
+            padding: 40px 35px 48px;
+            border-radius: 3px;
+        }
+        h2{
+            font-size: em(41);
+            line-height: line-height(41,55);
+            font-family: $font-main-extrabold;
+            margin-bottom: 35px;
+            @include breakpoint($large){
+                font-size: em(23);
+                line-height: line-height(23,27);
+            }
+            @include breakpoint($small){
+                margin-bottom: 21px;
+            }
+        }
+        .btn{
+            min-width: 152px;
+            margin-top: 30px;
+            @include breakpoint($small){
+                min-width: 98px;
+                margin-top: 13px;
+            }
+        }
+    }
+    &__info{
+        padding: 55px 45px 145px 45px;
+        background: url("../images/contact-background.jpg") 0 0 no-repeat;
+        box-shadow: 0 2px 7px 1px rgba(0,0,0,0.07);
+        background-size: cover;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 36.424%;
+        float: right;
+        margin-top: -470px;
+        @include breakpoint($large){
+            width: 40%;
+            padding: 40px 30px 65px 30px;
+            margin-top: -395px;
+        }
+        @include breakpoint($xsmall){
+            margin-top: 30px;
+            width: 100%;
+            border-radius: 3px;
+        }
+        h2{
+            color: $white;
+            position: relative;
+            font-size: em(41);
+            line-height: line-height(41,55);
+            font-family: $font-main-extrabold;
+            padding-bottom: 14px;
+            margin-bottom: 26px;
+            @include breakpoint($large){
+                font-size: em(23);
+                line-height: line-height(23,27);
+            }
+            &:after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 47px;
+                border-bottom: 3px solid $white;
+                @include breakpoint($large){
+                    width: 35px;
+                    border-bottom-width: 2px;
+                }
+            }
+        }
+        p{
+            color: $white;
+            font-size: em(16);
+            @include breakpoint($large){
+                font-size: em(13);
+                line-height: line-height(13,18);
+            }
+        }
+        .social-links__item {
+            @include breakpoint($large){
+                margin-right: 27px;
+            }
+        }
+        .social-links__item .icon{
+            @include breakpoint($large){
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &__info-items{
+        margin: 29px 0 73px;
+        @include breakpoint($xsmall){
+            margin-bottom: 48px;
+        }
+        li{
+            display: flex;
+            color: $white;
+            margin-bottom: 18px;
+            font-family: $font-main-extrabold;
+            font-size: em(20);
+            margin-left: -4px;
+            @include breakpoint($large){
+                font-size: em(14);
+                line-height: line-height(14,18);
+            }
+            &:last-child{
+                padding-top: 5px;
+            }
+            .icon-wrap{
+                flex: 0 0 26px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 12px;
+                @include breakpoint($large){
+                    margin-right: 8px;
+                }
+                &--align-top{
+                    align-items: flex-start;
+                }
+                .icon{
+                    &--location{
+                        width: 26px;
+                        height: 26px;
+                        margin-top: 6px;
+                        @include breakpoint($large){
+                            margin-top: 0;
+                            width: 22px;
+                            height: 24px;
+                        }
+                    }
+                    &--mail{
+                        width: 19px;
+                        height: 19px;
+                        margin-top: 4px;
+                        @include breakpoint($large){
+                            margin-top: 0;
+                            width: 17px;
+                            height: 17px;
+                        }
+                    }
+                    &--phone{
+                        width: 15px;
+                        height: 19px;
+                        margin-top: 2px;
+                        @include breakpoint($large){
+                            margin-top: 0;
+                            width: 13px;
+                            height: 17px;
+                        }
+                    }
+                }
+            }
+            a{
+                color: $white;
+            }
+            .address{
+                &--small{
+                    padding-top: 2px;
+                    display: block;
+                    font-size: em(12);
+                    font-family: $font-main;
+                    @include breakpoint($large){
+                        padding-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes arrow-animation {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(2px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+@-webkit-keyframes arrow-animation {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(2px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,38 @@
+.social-links{
+    &__item{
+        float: left;
+        margin-right: 40px;
+        transition: $t-hover;
+        @include breakpoint($large){
+            margin-right: 35px;
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+        &:hover{
+            opacity: 0.75;
+        }
+        .icon{
+            display: block;
+            width: 30px;
+            height: 34px;
+            fill:$white;
+            @include breakpoint($large){
+                width: 26px;
+                height: 26px;
+            }
+            &--fb{
+                background-image: url("../ui/facebook.svg");
+            }
+            &--in{
+                background-image: url("../ui/instagram.svg");
+            }
+            &--tw{
+                background-image: url("../ui/twitter.svg");
+            }
+            &--gp{
+                background-image: url("../ui/google_plus.svg");
+            }
+        }
+    }
+}

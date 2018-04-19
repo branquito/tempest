@@ -1,5 +1,25 @@
-
-<h1 class="title"><%= config.title %></h1>
-<% if (config.subtitle) { %>
-  <h2 class="subtitle"><%= config.subtitle %></h2>
-<% } %>
+<header class="header" data-js="header">
+	<div class="container">
+		<div class="header__inner-content">
+			<a href="#" class="header__logo">
+				<svg class="icon">
+					<use xlink:href="/ui/symbol-defs.svg#icon-logo"/>
+				</svg>
+			</a>
+			<ul class="header__language">
+				<li class="header__language-item">
+					<a href="index-de.html"><span>DE</span>
+						<i class="flag flag--de"></i>
+					</a>
+				</li>
+			</ul>
+			<nav class="header__nav" data-js="header-menu">
+				<ul class="header__nav-list">
+					<li class="header__nav-list-item"><a href="#">blog</a></li>
+					<li class="header__nav-list-item"><a href="#">about</a></li>
+					<li class="header__nav-list-item"><a href="#">contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>

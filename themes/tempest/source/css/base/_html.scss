@@ -1,0 +1,68 @@
+html, body {
+    width: 100%;
+    display: block;
+    overflow-x: hidden;
+    &.lock{
+        @include breakpoint($medium){
+            overflow: hidden;
+        }
+    }
+}
+
+body{
+    -webkit-font-smoothing: antialiased;
+}
+
+
+html {
+    font-weight: normal;
+    font-family: $font-main;
+    font-size: $browser-context+px;
+    color: $default-body-text-color;
+    line-height: line-height($browser-context, $browser-line-height);
+}
+
+a {
+    text-decoration: none;
+    color: $default-body-link-color;
+}
+
+.is-link {
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+p{
+    font-size: em(18);
+    line-height: line-height(18, 25);
+    @include breakpoint($xmedium){
+        font-size: em(16);
+        line-height: line-height(16, 25);
+    }
+}
+
+h1, h2, h3{
+    color: $sub-color;
+}
+
+
+input,
+select,
+textarea {
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius:0;
+}
+
+ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+figure{
+    margin:0;
+}

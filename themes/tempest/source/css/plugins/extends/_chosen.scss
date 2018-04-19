@@ -1,0 +1,62 @@
+.chosen-container-single .chosen-single{
+  border-radius: 0;
+  height: 50px;
+  border: solid 1px $white;
+  font-size: em(16);
+  color: $white;
+  padding: 0 15px;
+  line-height: 50px;
+  transition: $t-hover;
+  background-color: transparent;
+  @include breakpoint($medium){
+
+  }
+}
+
+.chosen-container-single .chosen-single span{
+  letter-spacing: 0;
+  padding: 0;
+  line-height: inherit;
+}
+
+.chosen-container{
+  &.chosen-with-drop{
+    .chosen-single{
+
+    }
+    .chosen-drop{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  .chosen-drop{
+    letter-spacing: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-width: 0 1px 1px;
+    border-color: $white;
+    transition: $t-hover;
+  }
+}
+
+
+.chosen-container .chosen-results{
+  font-size: 16px;
+  color: $black-100;
+  max-height: 345px;
+  @include breakpoint($medium){
+    font-size:18px;
+  }
+  li{
+    padding: 10px 15px;
+    @include breakpoint($medium){
+      padding: 14px 20px 15px;
+    }
+    &.highlighted {
+      background-color: #eeeeee;
+      color: $black-100;
+    }
+  }
+}
+

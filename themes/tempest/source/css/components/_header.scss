@@ -1,0 +1,126 @@
+.header{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 60px 0 0;
+  @include breakpoint($xsmall){
+    padding: 30px 0 0;
+  }
+  &__inner-content{
+    display: flex;
+    align-items: center;
+    @include breakpoint($xsmall){
+      display: block;
+    }
+  }
+
+  &__logo{
+    float: left;
+    svg{
+      width: 68px;
+      height: 54px;
+      fill: $white;
+      @include breakpoint($xsmall){
+        width: 34px;
+        height: 27px;
+      }
+    }
+  }
+
+  &__nav{
+    float: left;
+    flex: 1;
+    margin-left: 86px;
+    @include breakpoint($xsmall){
+      flex:inherit;
+      width: 100%;
+      margin: 28px 0 0;
+    }
+  }
+
+  &__nav-list-item{
+    display: block;
+    float: left;
+    position: relative;
+    margin-right: 80px;
+    @include breakpoint($xsmall){
+      margin-right: 75px;
+    }
+    @include breakpoint($small){
+      margin-right: 39px;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+    &.is-active{
+      a{
+        color: $white !important;
+        opacity: 1;
+      }
+    }
+
+    a{
+      color: $white;
+      padding: 2px 0;
+      transition: $t-hover;
+      letter-spacing: 1px;
+      font-family: $font-main-bold;
+      font-size: em(23);
+      text-transform: lowercase;
+      &:hover{
+        opacity: 0.75;
+      }
+      @include breakpoint($xsmall){
+        font-size: em(19);
+      }
+    }
+  }
+
+  &__language{
+    order:3;
+    @include breakpoint($xsmall){
+      order:inherit;
+      float: right;
+      margin-top: 3px;
+    }
+  }
+
+  &__language-item{
+    a{
+      font-family: $font-main-black;
+      font-size: em(19);
+      text-shadow: 0 2px 4px 0 rgba(0,0,0,0.04);
+      color: $white;
+      display: flex;
+      align-items: center;
+      transition: $t-hover;
+      &:hover{
+        opacity: 0.75;
+      }
+      @include breakpoint($xsmall){
+        font-size: em(14);
+      }
+    }
+    .flag{
+      display: block;
+      width: 20px;
+      height: 15px;
+      margin-left: 10px;
+      @include breakpoint($xsmall){
+        width: 14px;
+        height: 11px;
+        margin-left: 6px;
+      }
+      &--de{
+        background: url("../ui/flag-1.svg") 0 0 no-repeat;
+        background-size: cover;
+      }
+      &--en{
+        background: url("../ui/flag-2.svg") 0 0 no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}

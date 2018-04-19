@@ -1,0 +1,22 @@
+.btn {
+    color: $white;
+    text-align:center;
+    transition: $t-hover;
+    cursor:pointer;
+    display:inline-block;
+    font-size: em(16);
+    font-family: $font-main-extrabold;
+    height: 46px;
+    border-radius: 8px;
+    background: linear-gradient(50.82deg, rgba(86,157,194,0.73) 0%, #CDE9FA 100%);
+    @include breakpoint($small){
+        width: 98px;
+        height: 28px;
+        font-size: em(11);
+        border-radius: 3px;
+    }
+    &:hover{
+        opacity: 0.9;
+    }
+}
+

@@ -1,0 +1,23 @@
+$font-main: 'nunitosans-regular-webfont';
+$font-main-light-italic: 'nunitosans-lightitalic-webfont';
+$font-main-bold: 'nunitosans-bold-webfont';
+$font-main-semibold: 'nunitosans-semibold-webfont';
+$font-main-extrabold: 'nunitosans-extrabold-webfont';
+$font-main-black: 'nunitosans-black-webfont';
+
+@include font-face($font-main, 'nunitosans-regular-webfont');
+@include font-face($font-main-light-italic, 'nunitosans-lightitalic-webfont');
+@include font-face($font-main-semibold, 'nunitosans-semibold-webfont');
+@include font-face($font-main-bold, 'nunitosans-bold-webfont');
+@include font-face($font-main-extrabold, 'nunitosans-extrabold-webfont');
+@include font-face($font-main-black, 'nunitosans-black-webfont');
+
+
+//########################################
+//## SIZES ###############################
+//########################################
+
+$browser-context: 16; // px
+$browser-line-height: 25; // px
+
+
