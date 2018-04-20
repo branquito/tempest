@@ -354,6 +354,9 @@
         }
     }
     &__item-image{
+        background-size: cover;
+        background-position: center;
+        min-height: 260px;
         overflow: hidden;
         position: relative;
         flex: 0 0 476px;
