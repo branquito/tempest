@@ -1,0 +1,11 @@
+<section class="logo-carousel">
+  <div class="container">
+    <div class="logo-carousel__inner" data-js="logo-carousel">
+      <% site.data.homepage.logo_carousel.forEach(function(logo, i) { %>
+      <div class="logo-carousel__item logo-carousel__item--bottom-space">
+        <img src="<%= logo %>" alt="">
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

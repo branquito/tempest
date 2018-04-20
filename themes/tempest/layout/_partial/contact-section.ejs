@@ -1,0 +1,66 @@
+<div class="contact">
+  <div class="container">
+    <div class="contact__form">
+      <h2>Send us a message!</h2>
+      <div class="input-field">
+        <input type="text" placeholder="Your full name">
+      </div>
+      <div class="input-field">
+        <input type="text" placeholder="Email address">
+      </div>
+      <div class="input-field">
+        <textarea placeholder="Your message goes here…"></textarea>
+      </div>
+      <button type="button" class="btn">Send</button>
+    </div>
+
+    <div class="contact__info">
+      <h2><%= config.contact_info.caption %></h2>
+      <p><%= config.contact_info.description %></p>
+      <ul class="contact__info-items">
+        <li>
+          <div class="icon-wrap icon-wrap--align-top">
+            <svg class="icon icon--location">
+              <use xlink:href="/ui/symbol-defs.svg#icon-location"/>
+            </svg>
+          </div>
+          <div class="info-wrap">
+            <span class="address"><%= config.contact_info.address_line_1 %></span>
+            <span class="address address--small"><%= config.contact_info.address_line_2 %></span>
+          </div>
+        </li>
+        <li>
+          <div class="icon-wrap">
+            <svg class="icon icon--mail">
+              <use xlink:href="/ui/symbol-defs.svg#icon-mail"/>
+            </svg>
+          </div>
+          <div class="info-wrap">
+            <a href="mailto:<%= config.contact_info.email %>"><%= config.contact_info.email %></a>
+          </div>
+        </li>
+        <li>
+          <div class="icon-wrap">
+            <svg class="icon icon--phone">
+              <use xlink:href="/ui/symbol-defs.svg#icon-phone"/>
+            </svg>
+          </div>
+          <div class="info-wrap">
+            <a href="tel:<%= config.contact_info.phone %>"><%= config.contact_info.phone %></a>
+          </div>
+        </li>
+      </ul>
+      <ul class="social-links">
+        <% site.data.homepage.social.forEach(function(icon, i) { %>
+          <li class="social-links__item social-links__item">
+            <a href="#">
+              <svg class="icon">
+                <use xlink:href="/ui/symbol-defs.svg#icon-<%= icon %>"/>
+              </svg>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</div>

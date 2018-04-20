@@ -5,7 +5,10 @@
 # Site
 title: Tempest
 subtitle:
-description:
+description: >
+  Tempest is a revolutionary new staffing software hitting the market like a
+  hurricane in June 2018. It can handle any kind of organisation: from two
+  colleagues working remotely to thousands of workers across a myriad locations.
 keywords:
 author: branchito de munze
 language:
@@ -13,6 +16,14 @@ timezone:
 menu:
   Home: /
   Archives: /archives
+
+contact_info:
+  caption: Elit accusantium deleniti cum?
+  description: Whether you enjoy city breaks or extended holidays in the sun, you can
+  address_line_1: 139 Block Stream Apt. 836
+  address_line_2: Serbia, Belgrade 11070
+  email: office@chord.agency
+  phone: '+381273659728'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

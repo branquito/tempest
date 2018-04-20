@@ -1,0 +1,10 @@
+<div class="home__carousel">
+  <div class="home__carousel-inner" data-js="carousel">
+    <% site.data.homepage.slides.forEach(function(slide, i) { %>
+      <div class="home__carousel-item home__carousel-item--<%= i+1 %>">
+        <img src="<%= slide %>" alt="slide-<%= i %>">
+      </div>
+    <% }) %>
+  </div>
+</div>
+

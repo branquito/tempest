@@ -8,10 +8,4 @@ rating: '10'
 
 Welcome to our Blog First Post, edited in CMS
 
-Check if Slack notifications are working
-
 Lorem inventore nemo alias molestias ullam Aliquid sunt ratione aut soluta nesciunt Laudantium nemo velit aliquam mollitia eligendi aperiam accusantium soluta Assumenda qui magnam optio pariatur molestiae consectetur! Accusantium explicabo
-
-Adipisicing quam eaque est quia quas laudantium esse! Minus maiores labore amet eius esse Optio aut assumenda excepturi fugiat adipisci Dolorem odio autem impedit ipsum quis quaerat cupiditate? Beatae voluptas!
-
-Ipsum expedita blanditiis maiores dignissimos quidem Eligendi illo illum culpa placeat cumque. Fuga quod ad quam sit quia earum assumenda Veniam omnis placeat voluptate ipsam voluptate Necessitatibus dolorem voluptates voluptates?

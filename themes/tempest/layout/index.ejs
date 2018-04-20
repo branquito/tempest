@@ -5,10 +5,7 @@
 			<!--Home info-->
 			<div class="home__info">
 				<h1>Are you ready for Tempest?</h1>
-                <p>Tempest is a revolutionary new staffing software hitting the
-                  market like a hurricane in June 2018. It can handle any kind
-                  of organisation: from two colleagues working remotely to
-                  thousands of workers across a myriad locations.</p>
+                <p><%= config.description %></p>
 				<div class="home__email-form">
 					<input type="text" placeholder="Enter your email">
 					<button class="home__email-form-trigger">
@@ -29,21 +26,10 @@
                   </li>
                 <% }) %>
 				</ul>
-
 			</div>
-			<!--/Home info-->
+            <!-- Home info -->
 
-			<!--Home carousel-->
-			<div class="home__carousel">
-				<div class="home__carousel-inner" data-js="carousel">
-                <% site.data.homepage.slides.forEach(function(slide, i) { %>
-                  <div class="home__carousel-item home__carousel-item--<%= i+1 %>">
-                    <img src="<%= slide %>" alt="slide-<%= i %>">
-                  </div>
-                <% }) %>
-				</div>
-			</div>
-			<!--/Home carousel-->
+            <%- partial('_partial/home-carousel') %>
 
 			<!--Scroll down-->
 			<div class="home__scroll-down" data-js="smooth-scroll" data-href=".blog-list">
@@ -67,35 +53,21 @@
 		<div class="container">
 			<div class="blog-list__inner" data-js="blog-list-carousel">
 				<!--Blog item-->
-				<div class="blog-list__item">
-					<a href="The-Challenges-Ahead.html" class="blog-list__item-inner">
-						<div class="blog-list__item-image">
-							<img src="/images/img2.png" alt="">
-						</div>
-						<div class="blog-list__item-text">
-							<span class="blog-list__item-category">NEW</span>
-							<h2>The Challenges Ahead</h2>
-							<p>Once merely the province of manual labour and secretarial staffing, in recent years temp agencies have been tasked with staffing nearly every field of the modern labour market. Increasingly, employers in all sectors are turning to temp agencies to meet their labour needs for the benefits they confer: a more flexible workforce and thereby a greater capacity to scale their businesses.</p>
-						</div>
-					</a>
-				</div>
+                <% site.posts.forEach(function(post, index) { %>
+                  <div class="blog-list__item">
+                      <a href="<%= post.path %>" class="blog-list__item-inner">
+                          <div class="blog-list__item-image">
+                              <img src="/images/img2.png" alt="">
+                          </div>
+                          <div class="blog-list__item-text">
+                              <span class="blog-list__item-category">NEW</span>
+                              <h2><%= post.title %></h2>
+                              <p><%- post.content %></p>
+                          </div>
+                      </a>
+                  </div>
+                <% }) %>
 				<!--/Blog item-->
-
-				<!--Blog item-->
-				<div class="blog-list__item">
-					<a href="A-Storm-is-Brewing.html" class="blog-list__item-inner">
-						<div class="blog-list__item-image">
-							<img src="/images/img1.png" alt="">
-						</div>
-						<div class="blog-list__item-text">
-							<span class="blog-list__item-category">POPULAR</span>
-							<h2>A Storm is Brewing</h2>
-							<p>Standing at the end of Brighton Pier, James looks out across the English Channel. The water is choppier than unusual The waves swell up and break. Above them dark clouds gather. </p>
-						</div>
-					</a>
-				</div>
-				<!--/Blog item-->
-
 			</div>
 			<ul class="blog-list__carousel-arrows">
 				<li class="js-blog-carousel-prev">
@@ -113,184 +85,8 @@
 	</section>
 	<!--/Blog list carousel-->
 
-	<!--About-->
-	<section class="about">
-		<div class="container">
-			<div class="about__inner clear">
-				<div class="about__background">
-					<div class="about__background-image"></div>
-
-				</div>
-				<div class="about__mobile">
-					<div class="about__mobile-image" style="background: url('/images/about-mob.png') no-repeat 0 0; background-size: cover;">
-
-					</div>
-				</div>
-				<div class="about__text">
-					<h2>What is Tempest?</h2>
-					<p>Tempest is a revolutionary new staffing software hitting the market like a hurricane in June 2018. It can handle any kind of organisation: from two colleagues working remotely to thousands of workers across a myriad locations.
-						<br><br>
-						It can manage swaps between people, handle the most complex of payment rates, ensure compliance with dozens of pieces of legislation, request the location of every worker with a single action - and that’s all before we even get to the scheduling. Batten down the hatches. It’s about to get rough.</p>
-				</div>
-				<div class="about__cards">
-					<div class="about__cards-image">
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--/About-->
-
-	<section class="logo-carousel">
-		<div class="container">
-			<div class="logo-carousel__inner" data-js="logo-carousel">
-				<div class="logo-carousel__item">
-					<img src="/images/logo/1.png" alt="">
-				</div>
-				<div class="logo-carousel__item">
-					<img src="/images/logo/2.png" alt="">
-				</div>
-				<div class="logo-carousel__item">
-					<img src="/images/logo/3.png" alt="">
-				</div>
-				<div class="logo-carousel__item">
-					<img src="/images/logo/4.png" alt="">
-				</div>
-				<div class="logo-carousel__item logo-carousel__item--bottom-space">
-					<img src="/images/logo/5.png" alt="">
-				</div>
-				<div class="logo-carousel__item">
-					<img src="/images/logo/6.png" alt="">
-				</div>
-				<div class="logo-carousel__item">
-					<img src="/images/logo/7.png" alt="">
-				</div>
-				<div class="logo-carousel__item">
-					<img src="/images/logo/8.png" alt="">
-				</div>
-				<div class="logo-carousel__item">
-					<img src="/images/logo/9.png" alt="">
-				</div>
-				<div class="logo-carousel__item">
-					<img src="/images/logo/10.png" alt="">
-				</div>
-				<div class="logo-carousel__item">
-					<img src="/images/logo/11.png" alt="">
-				</div>
-				<div class="logo-carousel__item">
-					<img src="/images/logo/12.png" alt="">
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!--Contact-->
-	<div class="contact">
-		<div class="container">
-			<div class="contact__form">
-				<h2>Send us a message!</h2>
-				<div class="input-field">
-					<input type="text" placeholder="Your full name">
-				</div>
-				<div class="input-field">
-					<input type="text" placeholder="Email address">
-				</div>
-				<div class="input-field">
-					<textarea placeholder="Your message goes here…"></textarea>
-				</div>
-				<button type="button" class="btn">Send</button>
-			</div>
-
-			<div class="contact__info">
-				<h2>Lorem ipsum sit</h2>
-				<p>Whether you enjoy city breaks or extended holidays in the sun, you can</p>
-				<ul class="contact__info-items">
-					<li>
-						<div class="icon-wrap icon-wrap--align-top">
-							<svg class="icon icon--location">
-								<use xlink:href="/ui/symbol-defs.svg#icon-location"/>
-							</svg>
-						</div>
-						<div class="info-wrap">
-							<span class="address">139 Block Stream Apt. 836</span>
-							<span class="address address--small">Serbia, Belgrade 11070</span>
-						</div>
-					</li>
-					<li>
-						<div class="icon-wrap">
-							<svg class="icon icon--mail">
-								<use xlink:href="/ui/symbol-defs.svg#icon-mail"/>
-							</svg>
-						</div>
-						<div class="info-wrap">
-							<a href="mailto:office@chord.agency">office@chord.agency</a>
-						</div>
-					</li>
-					<li>
-						<div class="icon-wrap">
-							<svg class="icon icon--phone">
-								<use xlink:href="/ui/symbol-defs.svg#icon-phone"/>
-							</svg>
-						</div>
-						<div class="info-wrap">
-							<a href="tel:+381273659728">+381273659728</a>
-						</div>
-					</li>
-				</ul>
-				<ul class="social-links">
-					<li class="social-links__item social-links__item">
-						<a href="#">
-							<svg class="icon">
-								<use xlink:href="/ui/symbol-defs.svg#icon-fb"/>
-							</svg>
-						</a>
-					</li>
-					<li class="social-links__item social-links__item">
-						<a href="#">
-							<svg class="icon">
-								<use xlink:href="/ui/symbol-defs.svg#icon-in"/>
-							</svg>
-						</a>
-					</li>
-					<li class="social-links__item social-links__item">
-						<a href="#">
-							<svg class="icon">
-								<use xlink:href="/ui/symbol-defs.svg#icon-tw"/>
-							</svg>
-						</a>
-					</li>
-					<li class="social-links__item social-links__item">
-						<a href="#">
-							<svg class="icon">
-								<use xlink:href="/ui/symbol-defs.svg#icon-gp"/>
-							</svg>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!--/Contact-->
-
-	<!--Footer-->
-	<footer class="footer clear">
-		<div class="container">
-			<a href="#" class="footer__logo">
-				<svg class="icon">
-					<use xlink:href="/ui/symbol-defs.svg#icon-logo"/>
-				</svg>
-			</a>
-			<ul class="footer__links">
-				<li><a href="#">terms of use</a></li>
-				<li><a href="#">privacy policy</a></li>
-			</ul>
-		</div>
-		<ul class="footer__restangle-wrapp">
-			<li class="footer__restangle footer__restangle--1" data-js="move-restangle-1"></li>
-			<li class="footer__restangle footer__restangle--2" data-js="move-restangle-2"></li>
-			<li class="footer__restangle footer__restangle--3" data-js="move-restangle-3"></li>
-		</ul>
-	</footer>
-	<!--/Footer-->
+    <%- partial('_partial/about-section') %>
+    <%- partial('_partial/logo-carousel-section') %>
+    <%- partial('_partial/contact-section') %>
+    <%- partial('_partial/footer.ejs') %>
 </div>
