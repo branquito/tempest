@@ -5,7 +5,10 @@
 			<!--Home info-->
 			<div class="home__info">
 				<h1>Are you ready for Tempest?</h1>
-				<p>Tempest is a revolutionary new staffing software hitting the market like a hurricane in June 2018. It can handle any kind of organisation: from two colleagues working remotely to thousands of workers across a myriad locations. </p>
+                <p>Tempest is a revolutionary new staffing software hitting the
+                  market like a hurricane in June 2018. It can handle any kind
+                  of organisation: from two colleagues working remotely to
+                  thousands of workers across a myriad locations.</p>
 				<div class="home__email-form">
 					<input type="text" placeholder="Enter your email">
 					<button class="home__email-form-trigger">
@@ -16,34 +19,15 @@
 				</div>
 
 				<ul class="social-links">
-					<li class="social-links__item social-links__item">
-						<a href="#">
-							<svg class="icon">
-								<use xlink:href="/ui/symbol-defs.svg#icon-fb"/>
-							</svg>
-						</a>
-					</li>
-					<li class="social-links__item social-links__item">
-						<a href="#">
-							<svg class="icon">
-								<use xlink:href="/ui/symbol-defs.svg#icon-in"/>
-							</svg>
-						</a>
-					</li>
-					<li class="social-links__item social-links__item">
-						<a href="#">
-							<svg class="icon">
-								<use xlink:href="/ui/symbol-defs.svg#icon-tw"/>
-							</svg>
-						</a>
-					</li>
-					<li class="social-links__item social-links__item">
-						<a href="#">
-							<svg class="icon">
-								<use xlink:href="/ui/symbol-defs.svg#icon-gp"/>
-							</svg>
-						</a>
-					</li>
+                <% site.data.homepage.social.forEach(function(icon, i) { %>
+                  <li class="social-links__item social-links__item">
+                      <a href="#">
+                          <svg class="icon">
+                            <use xlink:href="/ui/symbol-defs.svg#icon-<%= icon %>"/>
+                          </svg>
+                      </a>
+                  </li>
+                <% }) %>
 				</ul>
 
 			</div>
@@ -52,18 +36,11 @@
 			<!--Home carousel-->
 			<div class="home__carousel">
 				<div class="home__carousel-inner" data-js="carousel">
-					<div class="home__carousel-item home__carousel-item--1">
-						<img src="/images/1.png" alt="">
-					</div>
-					<div class="home__carousel-item home__carousel-item--2">
-						<img src="/images/2.png" alt="">
-					</div>
-					<div class="home__carousel-item home__carousel-item--3">
-						<img src="/images/3.png" alt="">
-					</div>
-					<div class="home__carousel-item home__carousel-item--4">
-						<img src="/images/4.png" alt="">
-					</div>
+                <% site.data.homepage.slides.forEach(function(slide, i) { %>
+                  <div class="home__carousel-item home__carousel-item--<%= i+1 %>">
+                    <img src="<%= slide %>" alt="slide-<%= i %>">
+                  </div>
+                <% }) %>
 				</div>
 			</div>
 			<!--/Home carousel-->
@@ -78,11 +55,9 @@
 		</div>
 
 		<ul class="home__restangle-wrapp">
-			<li class="home__restangle home__restangle--1" data-js="move-restangle-1"></li>
-			<li class="home__restangle home__restangle--2" data-js="move-restangle-2"></li>
-			<li class="home__restangle home__restangle--3" data-js="move-restangle-3"></li>
-			<li class="home__restangle home__restangle--4" data-js="move-restangle-4"></li>
-			<li class="home__restangle home__restangle--5" data-js="move-restangle-5"></li>
+            <% for (var i in Array(5).fill(0)) { %>
+              <li class="home__restangle home__restangle--<%= +i+1 %>" data-js="move-restangle-<%= +i+1 %>"></li>
+            <% } %>
 		</ul>
 	</section>
 	<!--/Home-->
