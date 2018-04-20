@@ -1,6 +1,24 @@
-<h1>Post layout in which single post view will be rendered</h1>
-<h1 class="title"><%- page.title %></h1>
-<%- page.content %>
+<%- partial('_partial/post/post-nav') %>
+
+<div class="page-wrapper">
+	<!--Blog post-->
+	<section class="blog-post">
+		<div class="blog-post__nav-trigger" data-js="blog-post-nav-trigger">
+			<svg class="icon">
+				<use xlink:href="/ui/symbol-defs.svg#icon-menu"/>
+			</svg>
+		</div>
+		<div class="blog-post__cover">
+			<img src="/images/img1-big.png" alt="">
+		</div>
+		<div class="blog-post__inner">
+            <h1><%= page.title %></h1>
+			<span class="blog-post__quick-info">by Tempest team | 15 min ago</span>
+            <%- page.content %>
+		</div>
+	</section>
+	<!--/Blog post-->
+</div>
 
 
 
