@@ -1,6 +1,7 @@
 ---
 title: A storm is Brewing
-p: blog/
-date: 2018-04-20 17:39:38
-tags:
+date: 2018-04-20T17:39:38.000Z
 ---
+Now Storm is updated with new content using Netlify CMS
+
+This should work fine, I suppose! ;)
