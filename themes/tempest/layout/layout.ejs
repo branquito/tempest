@@ -2,7 +2,10 @@
 <html lang="en">
 <%- partial('_partial/head') %>
 <body>
-  <%- partial('_partial/header') %>
+  <!-- load header conditionally, only when path is home route / -->
+  <% if (is_current('/')) { %>
+    <%- partial('_partial/header') %>
+  <% } %>
   <%- body %>
   <%- partial('_partial/after-footer') %>
   <%- partial('_partial/netlify-identity') %>
