@@ -1,18 +1,18 @@
 <div class="contact">
   <div class="container">
-    <div class="contact__form">
+    <form name="contact" action="<%- url_for('contact-success') %>" class="contact__form" netlify>
       <h2>Send us a message!</h2>
       <div class="input-field">
-        <input type="text" placeholder="Your full name">
+        <input type="text" name="full_name" placeholder="Your full name">
       </div>
       <div class="input-field">
-        <input type="text" placeholder="Email address">
+        <input type="text" name="email" placeholder="Email address">
       </div>
       <div class="input-field">
-        <textarea placeholder="Your message goes here…"></textarea>
+        <textarea name="message" placeholder="Your message goes here…"></textarea>
       </div>
-      <button type="button" class="btn">Send</button>
-    </div>
+      <button type="submit" class="btn">Send</button>
+    </form>
 
     <div class="contact__info">
       <h2><%= config.contact_info.caption %></h2>
